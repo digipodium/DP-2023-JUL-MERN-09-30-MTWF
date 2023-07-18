@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        .container{
+            height: 544px;
+            width: 100%;
+            border: 2px solid black;
+            /* Initialize the container as a flexbox */
+            display: flex;
+
+            /* Flex properties for the container */
+            /* flex-direction: row;
+            flex-direction: column;
+            flex-direction: row-reverse;
+            flex-direction: column-reverse; */
+
+            flex-wrap: wrap;
+            /* flex-wrap: wrap-reverse; */ 
+
+            /* flex-flow: row-reverse wrap; */
+
+            /* justify content will align the items horizontally */
+            /* justify-content: center;
+            justify-content: space-between;
+            justify-content: space-evenly;
+            justify-content: space-around; */
+
+            /* align items will align the items vertically  */
+            /* align-items: center;
+            align-items: flex-start;
+            align-items: flex-end;
+            align-items: stretch; */
+        }
+
+        .item{
+            /* width: 200px; */
+            height: 100px;
+            background-color: tomato;
+            border: 2px solid black;
+            margin: 10px;
+            padding: 3px;
+            /* flex-grow: 1; */
+        }
+
+        #item-1{
+            /* width: 2000px; */
+            /* flex-grow: 1; */
+        }
+
+        #item-2{
+            /* flex-grow: 3; */
+        }
+
+        #item-3{
+            /* flex-grow: 2; */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+</head>
+<body>
+    <h1>This is a flexbox tutorial</h1>
+    <div class="container">
+        <div class="item" id="item-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga veniam, sit, expedita adipisci quod praesentium debitis corrupti nesciunt, suscipit delectus maiores in! Pariatur voluptas cupiditate asperiores ad. Doloribus a quod sit labore pariatur cumque, omnis nesciunt? Ipsum dolores, modi ut soluta illum nemo praesentium quos, voluptates dolorum ab, doloremque blanditiis!</div>
+        <div class="item" id="item-2">Second Box</div>
+        <div class="item" id="item-3">Third Box</div>
+        <!-- <div class="item" id="item-1">Fourth Box</div>
+        <div class="item" id="item-1">Fifth Box</div>
+        <div class="item" id="item-1">Sixth Box</div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using CSS Grids</title>
+
+    <style>
+
+        :root{
+            --theme-background : #cbffc8;
+            --theme-text : #00490c;
+        }
+
+        .child{
+            border: 3px solid var(--theme-text);
+            background-color: var(--theme-background);
+            padding: 20px;
+            color: var(--theme-text);
+            animation: myanimation 2s alternate infinite;
+        }
+
+        .container{
+            display: grid;
+            /* grid-template-columns: 300px 400px 600px; */
+            /* grid-template-columns: 4fr 2fr 3fr; */
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 400px);
+            gap: 20px;
+            /* column-gap: 20px; */
+            /* row-gap: 20px; */
+            background-color: #00490c;
+            /* height: 100vh; */
+            height: calc(100vh - 106px);
+        }
+
+        body{
+            background-color: var(--theme-background);
+            margin: 0;
+        }
+
+        .navbar{
+            background-color: var(--theme-background);
+            border: 3px solid var(--theme-text);
+            height: 100px;
+        }
+
+        @keyframes myanimation {
+            0%{
+                transform: translateY(-50px);
+            }
+
+            50%{
+                transform: translateY(50px);
+            }
+
+            100%{
+                transform: translateY(-50px);
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar">
+
+    </nav>
+
+    <div class="container">
+        <div class="child">
+            <h1>Child 1</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis velit, neque ipsa voluptate labore obcaecati qui sunt illo eum, necessitatibus nulla, laudantium esse ex alias ipsum quia! Deleniti illum tempore, officiis obcaecati fuga ex ab error ipsum quis autem aliquid accusamus vel delectus architecto illo modi deserunt dicta soluta a!</p>
+        </div>
+        <div class="child">
+            <h1>Child 2</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis eveniet accusamus cupiditate ipsum exercitationem consequatur voluptatum quidem maiores itaque, illum veniam, expedita dolore ratione vero saepe fuga? Fuga magnam quae, cupiditate, enim quasi suscipit ducimus expedita doloribus esse molestias debitis iusto atque dignissimos nesciunt error quo. Natus esse blanditiis id?</p>
+        </div>
+        <div class="child">
+            <h1>Child 3</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi doloribus sed asperiores eveniet consectetur culpa nam totam, dolorum vel autem qui, aspernatur eius provident adipisci id modi doloremque corrupti quasi suscipit aliquam repellendus cumque illo. Voluptatibus possimus quae quo qui enim repellendus soluta molestias ea facilis, tempore adipisci alias aspernatur.</p>
+        </div>
+        <div class="child">
+            <h1>Child 4</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolorum aliquam ipsum ut voluptas ullam in assumenda reiciendis odio non vitae alias sint vero, perspiciatis magnam omnis deserunt expedita placeat eius doloremque veritatis architecto vel? Vero nihil placeat, ducimus natus repellat doloribus vel corporis fugit eos ipsa itaque error fugiat.</p>
+        </div>
+        <div class="child">
+            <h1>Child 5</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam officia ad a animi illum, suscipit quia possimus temporibus dolorem nobis. Mollitia pariatur molestiae aliquid voluptatem sit in fugiat culpa, quisquam ipsum, rem maxime, perferendis a sequi accusantium eaque consequatur ratione minus soluta maiores dolorem eum doloremque alias? Aspernatur, cupiditate laborum.</p>
+        </div>
+        <div class="child">
+            <h1>Child 6</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas porro numquam odit quaerat, modi consequuntur praesentium esse aperiam eaque mollitia assumenda odio et sit, repellendus quasi quia quisquam perferendis? Molestiae, dolores libero tempora deleniti porro perferendis eaque reiciendis non, error rem ratione soluta praesentium nihil? Tempora sapiente eius ex laudantium.
+        </div>
+    </div>
+
+</body>
+</html>
