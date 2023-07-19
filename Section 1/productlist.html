@@ -12,7 +12,7 @@
         header{
             background-image: linear-gradient(0deg, #000000a7, #000000a6) , url('https://specials-images.forbesimg.com/imageserve/6481f8913238a6f23130c0ae/Copy-of-3-Collage-Template--13-/960x0.png?fit=scale');
             background-size: cover;
-            padding: 150px 0;
+            /* padding: 50px 0; */
             background-position: center;
             color: white;
             background-attachment: fixed;
@@ -37,9 +37,45 @@
 </head>
   <body>
 
-
-    <header>
-        <div class="container">
+      
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgba(255, 255, 255, 0.541);">
+            <div class="container">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        <div class="container" style="padding: 150px 0;">
             <p class="display-4 fw-bold text-center page-title" >Best Headphone Offers</p>
             
             <div class="input-group mt-5 search-input">
