@@ -1,333 +1,517 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
 
     <style>
-        header{
-            background-image: linear-gradient(0deg, #000000a7, #000000a6) , url('https://specials-images.forbesimg.com/imageserve/6481f8913238a6f23130c0ae/Copy-of-3-Collage-Template--13-/960x0.png?fit=scale');
-            background-size: cover;
-            /* padding: 50px 0; */
-            background-position: center;
-            color: white;
-            background-attachment: fixed;
-        }
+      header {
+        background-image: linear-gradient(0deg, #000000a7, #000000a6),
+          url("https://specials-images.forbesimg.com/imageserve/6481f8913238a6f23130c0ae/Copy-of-3-Collage-Template--13-/960x0.png?fit=scale");
+        background-size: cover;
+        /* padding: 50px 0; */
+        background-position: center;
+        color: white;
+        background-attachment: fixed;
+      }
 
-        .card{
-            transform-style: preserve-3d;
-            transform: perspective(1000px);
-        }
+      .card {
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+      }
 
-        .card .card-body{
-            transform: translateZ(50px);
-        }
+      .card .card-body {
+        transform: translateZ(50px);
+      }
 
-        .img-container{
-            height: 300px;
-            overflow: hidden;
-        }
+      .img-container {
+        height: 300px;
+        overflow: hidden;
+      }
 
+      .swiper-slide{
+        height: 60vh;
+        padding: 50px;
+      }
     </style>
-
-</head>
+  </head>
   <body>
-
-      
-      <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgba(255, 255, 255, 0.541);">
-            <div class="container">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
+    <header>
+      <nav
+        class="navbar navbar-expand-md navbar-dark fixed-top"
+        style="background-color: rgba(255, 255, 255, 0.541)"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
                   </li>
                 </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
-            </div>
-          </nav>
-        <div class="container" style="padding: 150px 0;">
-            <p class="display-4 fw-bold text-center page-title" >Best Headphone Offers</p>
-            
-            <div class="input-group mt-5 search-input">
-                <input type="text" class="form-control form-control-lg">
-                <button class="btn btn-primary"> <i class="fa-solid fa-magnifying-glass"></i> Search</button>
-            </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
+      </nav>
+      <div class="container" style="padding: 150px 0">
+        <p class="display-4 fw-bold text-center page-title">
+          Best Headphone Offers
+        </p>
+
+        <div class="input-group mt-5 search-input">
+          <input type="text" class="form-control form-control-lg" />
+          <button class="btn btn-primary">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
+        </div>
+      </div>
     </header>
 
-    <div class="container mt-5" >
-        <div class="row">
-            <div class="col-md-3 mb-4">
-                <div class="card shadow">
-                    <div class="img-container">
-                        <img class="h-100 d-block m-auto" src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70" alt="">
-                    </div>
-                    <div class="card-body">
-                        <p class="fw-bold">boAt</p>
-                        <h3>Rockerz 450 Pro</h3>
+    <!-- slider -->
 
-                        <p class="fw-bold">
-                            <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376 Ratings)
-                        </p>
-
-                        <h2 class="text-end">₹ 1698</h2>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary"> <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now</button>
-                        <button class="btn btn-danger"> <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <div class="img-container">
-                        <img class="h-100 d-block m-auto" src="https://m.media-amazon.com/images/I/61O0rXhhP6L._AC_UF1000,1000_QL80_.jpg" alt="">
-                    </div>
-                    <div class="card-body">
-                        <p class="fw-bold">boAt</p>
-                        <h3>Rockerz 450 Pro</h3>
-
-                        <p class="fw-bold">
-                            <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376 Ratings)
-                        </p>
-
-                        <h2 class="text-end">₹ 1698</h2>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary"> <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now</button>
-                        <button class="btn btn-danger"> <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70" alt="">
-                    <div class="card-body">
-                        <p class="fw-bold">boAt</p>
-                        <h3>Rockerz 450 Pro</h3>
-
-                        <p class="fw-bold">
-                            <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376 Ratings)
-                        </p>
-
-                        <h2 class="text-end">₹ 1698</h2>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary"> <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now</button>
-                        <button class="btn btn-danger"> <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70" alt="">
-                    <div class="card-body">
-                        <p class="fw-bold">boAt</p>
-                        <h3>Rockerz 450 Pro</h3>
-
-                        <p class="fw-bold">
-                            <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376 Ratings)
-                        </p>
-
-                        <h2 class="text-end">₹ 1698</h2>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary"> <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now</button>
-                        <button class="btn btn-danger"> <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70" alt="">
-                    <div class="card-body">
-                        <p class="fw-bold">boAt</p>
-                        <h3>Rockerz 450 Pro</h3>
-
-                        <p class="fw-bold">
-                            <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376 Ratings)
-                        </p>
-
-                        <h2 class="text-end">₹ 1698</h2>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary"> <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now</button>
-                        <button class="btn btn-danger"> <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card shadow">
-                    <img class="card-img-top" src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70" alt="">
-                    <div class="card-body">
-                        <p class="fw-bold">boAt</p>
-                        <h3>Rockerz 450 Pro</h3>
-
-                        <p class="fw-bold">
-                            <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376 Ratings)
-                        </p>
-
-                        <h2 class="text-end">₹ 1698</h2>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary"> <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now</button>
-                        <button class="btn btn-danger"> <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70" alt="">
-                    <div class="card-body">
-                        <p class="fw-bold">boAt</p>
-                        <h3>Rockerz 450 Pro</h3>
-
-                        <p class="fw-bold">
-                            <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376 Ratings)
-                        </p>
-
-                        <h2 class="text-end">₹ 1698</h2>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary"> <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now</button>
-                        <button class="btn btn-danger"> <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70" alt="">
-                    <div class="card-body">
-                        <p class="fw-bold">boAt</p>
-                        <h3>Rockerz 450 Pro</h3>
-
-                        <p class="fw-bold">
-                            <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376 Ratings)
-                        </p>
-
-                        <h2 class="text-end">₹ 1698</h2>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary"> <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now</button>
-                        <button class="btn btn-danger"> <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70" alt="">
-                    <div class="card-body">
-                        <p class="fw-bold">boAt</p>
-                        <h3>Rockerz 450 Pro</h3>
-
-                        <p class="fw-bold">
-                            <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376 Ratings)
-                        </p>
-
-                        <h2 class="text-end">₹ 1698</h2>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary"> <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now</button>
-                        <button class="btn btn-danger"> <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70" alt="">
-                    <div class="card-body">
-                        <p class="fw-bold">boAt</p>
-                        <h3>Rockerz 450 Pro</h3>
-
-                        <p class="fw-bold">
-                            <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376 Ratings)
-                        </p>
-
-                        <h2 class="text-end">₹ 1698</h2>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary"> <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now</button>
-                        <button class="btn btn-danger"> <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart</button>
-                    </div>
-                </div>
-            </div>
+    <div class="swiper myslider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide bg-danger">
+          <h1>Slide 1</h1>
         </div>
+        <div class="swiper-slide bg-primary">
+          <h1>Slide 2</h1>
+        </div>
+        <div class="swiper-slide bg-warning">
+          <h1>Slide 3</h1>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
     </div>
 
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <div class="card shadow">
+            <div class="img-container">
+              <img
+                class="h-100 d-block m-auto"
+                src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70"
+                alt=""
+              />
+            </div>
+            <div class="card-body">
+              <p class="fw-bold">boAt</p>
+              <h3>Rockerz 450 Pro</h3>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    
+              <p class="fw-bold">
+                <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376
+                Ratings)
+              </p>
+
+              <h2 class="text-end">₹ 1698</h2>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">
+                <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <div class="img-container">
+              <img
+                class="h-100 d-block m-auto"
+                src="https://m.media-amazon.com/images/I/61O0rXhhP6L._AC_UF1000,1000_QL80_.jpg"
+                alt=""
+              />
+            </div>
+            <div class="card-body">
+              <p class="fw-bold">boAt</p>
+              <h3>Rockerz 450 Pro</h3>
+
+              <p class="fw-bold">
+                <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376
+                Ratings)
+              </p>
+
+              <h2 class="text-end">₹ 1698</h2>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">
+                <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="fw-bold">boAt</p>
+              <h3>Rockerz 450 Pro</h3>
+
+              <p class="fw-bold">
+                <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376
+                Ratings)
+              </p>
+
+              <h2 class="text-end">₹ 1698</h2>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">
+                <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="fw-bold">boAt</p>
+              <h3>Rockerz 450 Pro</h3>
+
+              <p class="fw-bold">
+                <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376
+                Ratings)
+              </p>
+
+              <h2 class="text-end">₹ 1698</h2>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">
+                <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="fw-bold">boAt</p>
+              <h3>Rockerz 450 Pro</h3>
+
+              <p class="fw-bold">
+                <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376
+                Ratings)
+              </p>
+
+              <h2 class="text-end">₹ 1698</h2>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">
+                <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card shadow">
+            <img
+              class="card-img-top"
+              src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="fw-bold">boAt</p>
+              <h3>Rockerz 450 Pro</h3>
+
+              <p class="fw-bold">
+                <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376
+                Ratings)
+              </p>
+
+              <h2 class="text-end">₹ 1698</h2>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">
+                <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="fw-bold">boAt</p>
+              <h3>Rockerz 450 Pro</h3>
+
+              <p class="fw-bold">
+                <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376
+                Ratings)
+              </p>
+
+              <h2 class="text-end">₹ 1698</h2>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">
+                <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="fw-bold">boAt</p>
+              <h3>Rockerz 450 Pro</h3>
+
+              <p class="fw-bold">
+                <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376
+                Ratings)
+              </p>
+
+              <h2 class="text-end">₹ 1698</h2>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">
+                <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="fw-bold">boAt</p>
+              <h3>Rockerz 450 Pro</h3>
+
+              <p class="fw-bold">
+                <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376
+                Ratings)
+              </p>
+
+              <h2 class="text-end">₹ 1698</h2>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">
+                <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://rukminim2.flixcart.com/image/416/416/kmccosw0/headphone/z/j/l/rockerz-450-pro-boat-original-imagf9gz5qkud2z9.jpeg?q=70"
+              alt=""
+            />
+            <div class="card-body">
+              <p class="fw-bold">boAt</p>
+              <h3>Rockerz 450 Pro</h3>
+
+              <p class="fw-bold">
+                <i class="fa-solid fa-star text-warning"></i> 4.5 Stars (1,376
+                Ratings)
+              </p>
+
+              <h2 class="text-end">₹ 1698</h2>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">
+                <i class="fa-solid fa-bolt fa-bounce"></i> Buy Now
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-cart-shopping fa-beat"></i> Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <script>
+      ScrollReveal().reveal(".page-title", {
+        delay: 200,
+        origin: "bottom",
+        distance: "50px",
+        scale: 0.5,
+      });
 
-        ScrollReveal().reveal('.page-title', {
-            delay: 200,
-            origin: 'bottom',
-            distance: '50px',
-            scale: 0.5
-        });
-       
-        ScrollReveal().reveal('.search-input', {
-            delay: 200,
-            origin: 'left',
-            distance: '100px',
-            // scale: 0.5
-        });
-        
-        ScrollReveal().reveal('.card', {
-            delay: 200,
-            origin: 'bottom',
-            distance: '100px',
-            interval: 200,
-            reset: true
-        });
+      ScrollReveal().reveal(".search-input", {
+        delay: 200,
+        origin: "left",
+        distance: "100px",
+        // scale: 0.5
+      });
 
+      ScrollReveal().reveal(".card", {
+        delay: 200,
+        origin: "bottom",
+        distance: "100px",
+        interval: 200,
+        reset: true,
+      });
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"
+      integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <script>
-        VanillaTilt.init( document.querySelectorAll('.card'), {
-            max: 5,
-            speed: 400,
-            scale: 1.1,
-            glare: true
-        });
-
-
-
+      VanillaTilt.init(document.querySelectorAll(".card"), {
+        max: 5,
+        speed: 400,
+        scale: 1.1,
+        glare: true,
+      });
     </script>
 
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".myslider", {
+        // effect: "fade",
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      loop: true,
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+  </body>
 </html>
