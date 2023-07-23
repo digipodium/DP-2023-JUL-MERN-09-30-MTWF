@@ -8,3 +8,4 @@ console.log('-----------------');
 for(let i of nums){
     console.log(i ** 2);
 }
+
