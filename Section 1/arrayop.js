@@ -23,6 +23,23 @@ const prices2 = [ '$67.89', '$348.99', '$29384.22', '$4.102', '$1.241' ];
 
 // use map to get the prices in integer format
 
-console.log('$823.564'.slice(1));
+console.log(parseInt('$823.564'.slice(1)));
 console.log('sdjhjg'.toUpperCase());
 console.log('sdj-hjg'.split('-'));
+
+
+// convert all the names to uppercase
+console.log('raju'.toUpperCase());
+const names = ['Raju Rastogi', 'Kali charan', 'prem chopra'];
+
+console.log(names.map((name) => { return name.toUpperCase() }));
+
+console.log('raju rastogi'.split(' ')[0]);
+
+console.log(names.map((name) => { return name.split(' ')[0] }));
+
+console.log(25 ** 0.5);
+
+const numbers = [36, 25, 144, 625];
+
+console.log(numbers.map((n) => { return n ** 0.5 }));
