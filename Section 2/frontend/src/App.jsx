@@ -1,19 +1,28 @@
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div>
-      <h1 className='myclass'>My React App</h1>
-      <input type="text" />
-      <h2 style={{ color: 'green', fontSize: 30 }}>Using Inline CSS</h2>
-      <Home />
+      <BrowserRouter>
 
-      <Signup />
+        {/* <Link to="/home">Home</Link>
+        <Link to="/signup">Signup</Link>
+        <Link to="/login">Login</Link> */}
 
-      <Login />
+        <Navbar />
+
+        <Routes>
+          <Route element={ <Home /> } path='/' />
+          <Route element={ <Home /> } path='home' />
+          <Route element={ <Signup /> } path='signup' />
+          <Route element={ <Login /> } path='login' />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
