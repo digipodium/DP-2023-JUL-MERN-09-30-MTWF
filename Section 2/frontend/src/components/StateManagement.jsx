@@ -19,7 +19,6 @@ const StateManagement = () => {
       >
         Add Count
       </button>
-
         <h1>{count}</h1>
 
         <button className="btn btn-success mt-5" onClick={() => { setLikes(likes+1) }}>Update State</button>
