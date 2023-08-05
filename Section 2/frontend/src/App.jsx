@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import EventHandling from './components/EventHandling';
 import StateManagement from './components/StateManagement';
 import TodoList from './components/TodoList';
+import ProductList from './components/ProductList';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route element={ <EventHandling /> } path='event' />
           <Route element={ <StateManagement /> } path='state' />
           <Route element={ <TodoList /> } path='todo' />
+          <Route element={ <ProductList /> } path='list' />
         </Routes>
       </BrowserRouter>
     </div>
