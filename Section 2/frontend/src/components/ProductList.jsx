@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import smartphones from "./dummyData";
+const brands = ["Samsung", "OnePlus", "Apple", "Moto"];
 
 const ProductList = () => {
   const [productData, setProductData] = useState(smartphones);
 
-  const brands = ["Samsung", "OnePlus", "Apple", "Moto"];
 
   const displayProducts = () => {
     return productData.map((phone) => {
@@ -63,6 +63,9 @@ const ProductList = () => {
               <option value={brand}>{brand}</option>
             ))}
           </select>
+
+              <input type="range" min={1000} max={50000} step={1000} onChange={e => {console.log(e.target.value);}} />
+
         </div>
       </header>
 
