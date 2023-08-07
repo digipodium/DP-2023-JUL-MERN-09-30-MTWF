@@ -9,7 +9,7 @@ const Login = () => {
       email : "",
       password : ""
     },
-    onSubmit : ( values ) => { 
+    onSubmit : ( values ) => {
       console.log(values);
       // write code to submit form to server
     }
