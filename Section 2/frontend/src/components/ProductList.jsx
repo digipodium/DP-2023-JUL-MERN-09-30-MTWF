@@ -5,7 +5,6 @@ const brands = ["Samsung", "OnePlus", "Apple", "Moto"];
 const ProductList = () => {
   const [productData, setProductData] = useState(smartphones);
 
-
   const displayProducts = () => {
     return productData.map((phone) => {
       return (
@@ -47,7 +46,7 @@ const ProductList = () => {
   };
 
   return (
-    <div>
+    <div className="list-back">
       <header className="bg-body-secondary">
         <div className="container py-5">
           <h1 className="text-center">Product List Page</h1>
@@ -64,13 +63,32 @@ const ProductList = () => {
             ))}
           </select>
 
-              <input type="range" min={1000} max={50000} step={1000} onChange={e => {console.log(e.target.value);}} />
-
+          <input
+            type="range"
+            min={1000}
+            max={50000}
+            step={1000}
+            onChange={(e) => {
+              console.log(e.target.value);
+            }}
+          />
         </div>
       </header>
 
-      <div className="container">
-        <div className="row mt-4">{displayProducts()}</div>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-3">
+            <div className="card mt-4 vh-100">
+              <div className="card-body">
+                <h3>Categories</h3>
+                <hr />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-9">
+            <div className="row mt-4">{displayProducts()}</div>
+          </div>
+        </div>
       </div>
     </div>
   );
