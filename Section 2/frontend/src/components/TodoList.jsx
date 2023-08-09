@@ -34,7 +34,6 @@ const TodoList = () => {
       <div className="container">
         <p className="display-4 fw-bold text-center">ToDo List</p>
         <hr />
-        
 
         <div className="card">
           <div className="card-header">
