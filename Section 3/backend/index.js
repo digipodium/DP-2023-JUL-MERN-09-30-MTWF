@@ -10,6 +10,9 @@ const app = express();
 const port = 5000;
 
 // middleware
+
+app.use(express.json());
+
 app.use('/user', userRouter);
 app.use('/blog', blogRouter);
 
