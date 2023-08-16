@@ -23,20 +23,61 @@ router.get('/getall', (req, res) => {
         res.json(result);
     })
     .catch((err) => {
+        console.log(err);
         res.status(500).json(err);
     });
 });
 
-router.get('/getbyid', (req, res) => {
-    res.send('Response from user getbyid');
+// : denotes url parameter
+router.get('/getbyemail/:email', (req, res) => {
+    console.log(req.params.email);
+
+    // 1. find function matches and returns all the documents
+    // 2. findOne function matches and returns only first document
+    Model.findOne({email : req.params.email})
+    .then((result) => {
+        res.json(result);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+
+})
+
+router.get('/getbyid/:id', (req, res) => {
+
+    // Model.findOne({_id : req.params.id})
+    Model.findById(req.params.id)
+    .then((result) => {
+        res.json(result);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
-router.get('/delete', (req, res) => {
-    res.send('Response from user delete');
+router.delete('/delete/:id', (req, res) => {
+    Model.findByIdAndDelete(req.params.id)
+    .then((result) => {
+        res.json(result);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
-router.get('/update', (req, res) => {
-    res.send('Response from user update');
+router.put('/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body, {new : true})
+    .then((result) => {
+        res.json(result);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 module.exports = router;
