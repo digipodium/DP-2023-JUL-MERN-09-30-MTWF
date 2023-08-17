@@ -1,7 +1,11 @@
 import { useFormik } from 'formik';
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Signup = () => {
+
+  const navigate = useNavigate();
 
   const signupForm = useFormik({
     initialValues: {
@@ -10,8 +14,34 @@ const Signup = () => {
       password : "",
       age : ""
     },
-    onSubmit : ( values ) => {
+    onSubmit : async ( values ) => {
       console.log(values);
+
+      const res = await fetch('http://localhost:5000/user/add', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type' : 'application/json'
+        }
+      })
+
+      console.log(res.status);
+
+      if(res.status === 200){
+        Swal.fire({
+          icon : 'success',
+          title : 'WellDone!',
+          text : 'Registered Successfully 😎'
+        })
+        navigate('/login');
+      }else{
+        Swal.fire({
+          icon : 'error',
+          title : 'Error',
+          text : 'Something went wrong'
+        })
+      }
+
       // write code to submit form to server
     }
   });
@@ -21,7 +51,7 @@ const Signup = () => {
       <div className="w-25">
         <div className="card">
           <div className="card-body">
-            <h3 className="text-center">Login Form</h3>
+            <h3 className="text-center">Signup Form</h3>
             <hr />
 
             <form onSubmit={signupForm.handleSubmit}>
