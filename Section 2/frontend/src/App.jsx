@@ -8,6 +8,7 @@ import EventHandling from './components/EventHandling';
 import StateManagement from './components/StateManagement';
 import TodoList from './components/TodoList';
 import ProductList from './components/ProductList';
+import ManageUser from './components/ManageUser';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route element={ <StateManagement /> } path='state' />
           <Route element={ <TodoList /> } path='todo' />
           <Route element={ <ProductList /> } path='list' />
+          <Route element={ <ManageUser /> } path='manageuser' />
         </Routes>
       </BrowserRouter>
     </div>
