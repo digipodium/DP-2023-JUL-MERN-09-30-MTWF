@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const ManageUser = () => {
+
+    const [userList, setUserList] = useState([]);
 
     const fetchUserData = async () => {
         const res = await fetch( 'http://localhost:5000/user/getall' );
@@ -8,15 +10,55 @@ const ManageUser = () => {
 
         const data = await res.json();
         console.log(data);
+        setUserList(data);
     };
+
+    // fetchUserData();
 
     useEffect(() => {
       fetchUserData();
-    }, []);
-    
+    }, []); 
+
+    const displayUserData = () => {
+      return <table className='table table-dark'>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Age</th>
+                  <th colSpan={2}>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  userList.map( (user) => ( <tr>
+                    <td>{user._id}</td>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                    <td>{user.age}</td>
+                    <td>
+                      <button className='btn btn-primary'>Edit</button>
+                    </td>
+                    <td>
+                      <button className='btn btn-danger'>Delete</button>
+                    </td>
+                  </tr> ) )
+                }
+              </tbody>
+            </table>
+    }
 
   return (
-    <div>ManageUser</div>
+    <div>
+      <h1 className='text-center fw-bold'>Manage User Data</h1>
+      <hr />
+
+      <div className="container">
+          {displayUserData()}
+      </div>      
+
+    </div>
   )
 }
 
