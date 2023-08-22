@@ -12,3 +12,9 @@
 .list-back{
     background-image: url("/public/listing-back.jpg");
 }
+
+.bg{
+    background-image: url('https://assets.hongkiat.com/uploads/minimalist-dekstop-wallpapers/4k/original/15.jpg?3');
+    background-size: cover;
+    min-height: 100vh;
+}
