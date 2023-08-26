@@ -12,9 +12,16 @@ const Navbar = () => {
   const showLoginOptions = () => {
     if (currentUser !== null || loggedIn ) {
       return (
-        <li className="nav-item">
-          <button className="btn btn-danger" onClick={logout} >Logout</button>
-        </li>
+        <>
+          <li className="nav-item">
+            <button className="btn btn-danger" onClick={logout} >Logout</button>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/profile">
+              Profile
+            </NavLink>    
+          </li>
+        </>
       );
     } else {
       return (

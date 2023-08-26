@@ -13,6 +13,7 @@ import { Toaster } from "react-hot-toast";
 import UpdateUser from "./components/UpdateUser";
 import { AnimatePresence } from "framer-motion";
 import { UserProvider } from "./UserContext";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route element={<TodoList />} path="todo" />
             <Route element={<ProductList />} path="list" />
             <Route element={<ManageUser />} path="manageuser" />
+            <Route element={<Profile />} path="profile" />
             <Route element={<UpdateUser />} path="updateuser/:id" />
           </Routes>
         </AnimatePresence>
