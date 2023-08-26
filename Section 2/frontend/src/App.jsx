@@ -12,12 +12,14 @@ import ManageUser from "./components/ManageUser";
 import { Toaster } from "react-hot-toast";
 import UpdateUser from "./components/UpdateUser";
 import { AnimatePresence } from "framer-motion";
+import { UserProvider } from "./UserContext";
 
 function App() {
   return (
     <div>
       <Toaster position="top-right" />
       <BrowserRouter>
+      <UserProvider>
         <AnimatePresence>
           <Navbar />
           <Routes>
@@ -33,6 +35,7 @@ function App() {
             <Route element={<UpdateUser />} path="updateuser/:id" />
           </Routes>
         </AnimatePresence>
+        </UserProvider>
       </BrowserRouter>
     </div>
   );

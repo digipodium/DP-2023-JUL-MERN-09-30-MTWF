@@ -1,10 +1,38 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import useUserContext from "../UserContext";
 
 const Navbar = () => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user"))
   );
+
+  const { loggedIn, logout } = useUserContext();
+
+  const showLoginOptions = () => {
+    if (currentUser !== null || loggedIn ) {
+      return (
+        <li className="nav-item">
+          <button className="btn btn-danger" onClick={logout} >Logout</button>
+        </li>
+      );
+    } else {
+      return (
+        <>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/signup">
+              Signup
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/login">
+              Login
+            </NavLink>
+          </li>
+        </>
+      );
+    }
+  };
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -30,16 +58,7 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/signup">
-                Signup
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/login">
-                Login
-              </NavLink>
-            </li>
+
             <li className="nav-item">
               <NavLink className="nav-link" to="/event">
                 Event Handling
@@ -65,14 +84,7 @@ const Navbar = () => {
                 Manage User
               </NavLink>
             </li>
-            {currentUser !== null ? (
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/manageuser">
-                  Logout
-                </NavLink>
-              </li>
-            ) : ""
-            }
+            {showLoginOptions()}
           </ul>
         </div>
       </div>
