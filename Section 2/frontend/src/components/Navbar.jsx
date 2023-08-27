@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useUserContext from "../UserContext";
 
-const Navbar = () => {
+
+const Navbar = ({}) => {
+  
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user"))
   );

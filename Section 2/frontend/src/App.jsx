@@ -14,29 +14,30 @@ import UpdateUser from "./components/UpdateUser";
 import { AnimatePresence } from "framer-motion";
 import { UserProvider } from "./UserContext";
 import Profile from "./components/Profile";
+import UserAuth from "./components/UserAuth";
 
 function App() {
   return (
     <div>
       <Toaster position="top-right" />
       <BrowserRouter>
-      <UserProvider>
-        <AnimatePresence>
-          <Navbar />
-          <Routes>
-            <Route element={<Home />} path="/" />
-            <Route element={<Home />} path="home" />
-            <Route element={<Signup />} path="signup" />
-            <Route element={<Login />} path="login" />
-            <Route element={<EventHandling />} path="event" />
-            <Route element={<StateManagement />} path="state" />
-            <Route element={<TodoList />} path="todo" />
-            <Route element={<ProductList />} path="list" />
-            <Route element={<ManageUser />} path="manageuser" />
-            <Route element={<Profile />} path="profile" />
-            <Route element={<UpdateUser />} path="updateuser/:id" />
-          </Routes>
-        </AnimatePresence>
+        <UserProvider>
+          <AnimatePresence>
+            <Navbar />
+            <Routes>
+              <Route element={<Home />} path="/" />
+              <Route element={<Home />} path="home" />
+              <Route element={<Signup />} path="signup" />
+              <Route element={<Login />} path="login" />
+              <Route element={<EventHandling />} path="event" />
+              <Route element={<StateManagement />} path="state" />
+              <Route element={<TodoList />} path="todo" />
+              <Route element={<ProductList />} path="list" />
+              <Route element={<ManageUser />} path="manageuser" />
+              <Route element={ <UserAuth> <Profile /> </UserAuth> } path="profile" />
+              <Route element={<UpdateUser />} path="updateuser/:id" />
+            </Routes>
+          </AnimatePresence>
         </UserProvider>
       </BrowserRouter>
     </div>
